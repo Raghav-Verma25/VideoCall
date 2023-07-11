@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Call Lobby</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='lobby.css'>
+</head>
+<body>
+     <div class="waviy">
+     <span style="--i:1">After</span>
+     <span style="--i:2">every</span>
+     <span style="--i:3">videocall</span>
+     <span style="--i:4">I</span>
+     <span style="--i:5">Thank</span>
+     <span style="--i:6">technology</span>
+     </div>
+  
+    <main id="lobby-container">
+        <div id="form-container">
+            <div id="form__container__header">
+                <p class="text-p">👋 Create OR Join a Room</p>
+            </div>
+
+            <div id="form__content__wrapper">
+                <form id="join-form">
+                    <input type="text" name="invite_link" required/>
+                    <div class="wrap-2">
+                        <button  class="button" >Join Room</button>
+                      </div>
+                </form>
+            </div>
+            
+        </div>
+    </main>
+</body>
+
+<script >
+    
+   let form = document.getElementById('join-form')
+
+     form.addEventListener('submit', (e) => {
+          e.preventDefault();
+         let inviteCode = e.target.invite_link.value
+           window.location = `index.html?room=${inviteCode}`;
+         console.log(window.location);
+
+     })
+    </script>
+
+</html>
